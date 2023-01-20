@@ -1,7 +1,9 @@
 <template>
 <div class="login-container">
-    <van-nav-bar
+  <van-nav-bar
   title="登录"
+  left-text="返回"
+  @click-left="$router.push( '/layout/my')"
 />
 <van-form @submit="onSubmit" ref="loginForm"   :show-error-message="false">
   <van-field
@@ -45,7 +47,7 @@
 <script>
 import { login, getSmsCode } from '@/api/login'
 export default {
-  name: 'LoginPage',
+  name: 'LayoutIndex',
   components: {},
   props: {},
   data () {
@@ -90,12 +92,13 @@ export default {
 
       try {
         const res = await login(this.user)
-        const { data } = res // 拿到成功响应数据中的token与refresh_token数据
+        const { data } = res //  { data }是通过对象的结构赋值，拿到成功响应数据中的token与refresh_token数据
         console.log('登录成功', res)
         console.log(data.data)
-        // console.log(res.data.data)
+        // console.log(res.data.data)  //{ data }解构接收到的内容和res.data是一个东西
         this.$toast.success('登录成功')
         this.$store.commit('setUser', data.data)
+        this.$router.back() // 在登录成功后不应该继续留在登录页面,而是应该跳回到个人中心页面
       } catch (err) {
         if (err.response.status === 400) {
           console.log('手机号或者验证码错误', err)

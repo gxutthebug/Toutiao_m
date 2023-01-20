@@ -3,21 +3,354 @@
 
 
 .login-container{
-    .van-nav-bar__content {
+  .van-nav-bar {
         background-color: rgb(26, 154, 246);
     }
     
     .van-nav-bar__title {
-        color: #fff;
+        color: rgba(246, 248, 249, 0.97);
     }
-    
-    .block {
-        display: inline-block;
-        width: 66px;
-        color: rgb(32, 1, 1);
-        font-size: 30px;
-        text-align: center;
-        border-radius:15px;
-        background-color: #dee0e2;
+   .van-nav-bar__text{
+        color: rgba(246, 248, 249, 0.97); 
+   }
+}
+// ---------------------------------------------------------------------------------------
+.layout-container {
+    .layout-tabbar {
+      i.iconfont {
+        font-size: 40px;
       }
+      span.text {
+        font-size: 20px;
+        padding-left: 0.5px;
+      }
+    }
+  }
+
+
+  .my-container{
+    
+    .not-login{
+      height: 361px;
+      background: url("~@/assets/banner.png") no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .middle{
+        display: flex;
+        flex-direction: column;
+     }
+     .mobile{
+       width: 132px;
+       height: 132px;
+     }
+     .login-btn{
+       font-size: 30px;
+     }
+    }
+   
+
+    .user-info{
+      height: 361px;
+      background: url("~@/assets/banner.png") no-repeat;
+      .base-info{
+        display: flex;
+        justify-content: space-between;
+        height: 231px;    
+        padding: 76px 32px 23px;
+        box-sizing: border-box;
+        .left{
+          box-sizing: border-box;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          background-color: rgb(221, 255, 0);
+          .avater{
+            height: 132px;
+            width: 132px;
+          }
+          .name{
+            margin-left: 30px;
+            font-size: 24px;
+            color: rgb(13, 4, 4);
+            background-color: aqua;
+          }
+        }
+        .right{
+          display: flex;
+          align-items: center;
+          background-color: rgb(221, 255, 0);
+
+          // .van-button--info{
+          //   background-color: azure;
+          //   color: black;
+          // }
+          .fix-data{
+            background-color: aliceblue;
+            color: black;
+          }
+         }
+      }
+    }
+
+
+    .data-item{
+      display: flex;
+      .item{
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color: #fff;        
+          .count{
+            font-size: 36px;
+          }     
+          .text{
+            font-size: 23px;
+          }
+      } 
+    }
+
+  .out-login{
+    text-align: center;
+    font-size: 40px;
+    color: rgb(210, 54, 19);
+  }
+    
+  }
+// -------------------------------------------------------------------------------
+
+.home-container{
+  // padding-top: 174px;
+  .van-nav-bar__title{
+    max-width:unset;
+  }
+
+  .search-btn {
+    width: 555px;
+    height: 64px;
+    background-color: #5babfb;
+    border: none;
+    font-size: 28px;
+    .van-icon {
+      font-size: 32px;
+    }
+  }
+
+  .van-tab{
+    border: 1px solid #edeff3;
+    min-width: 200px;
+  }
+  .van-tabs__wrap{
+    height: 82px;
+    // 下面部分是头部导航栏的固定定位，不加 z-index: 1会被原标准流的盒子给挡住
+    position: fixed;
+    top: 92px;
+    left: 0; // 这里不加这left 跟right 为0导航栏的宽度会变成PC端的宽度导致导航栏内容位移
+    right: 0;
+    z-index: 1;
+  }
+ 
+  .van-tab--active{
+    color:#333333;
+  }
+  .van-tabs__line{
+    background-color: #5babfb;
+    width:31px !important;
+    height: 6px;
+    bottom: 35px;
+  }
+
+  .hb-btn{
+    position: fixed;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    opacity: 0.902;
+    width: 66px;
+    height: 82px;
+    border-left: 1px solid #edeff3;
+    
+       i{
+      font-size: 33px;
+    }
+  }
+
+  .blank{
+    width: 62px;
+    height: 82px;
+    flex-shrink: 0;
+  }
+}
+//--------------------------------------------------------------------------------------------
+.article-list {
+  margin-bottom: 100px;
+  margin-top: 174px;
+  // 给每个内容区域盒子一个单独的下拉滑动条,而不是共用浏览器的滚动条
+  overflow-y: auto;
+  height: 79vh;
+}
+
+//--------------------------------------------------------------------------------------------------
+
+.article-item{
+
+  .title {
+    font-size: 32px;
+    color: #3a3a3a;
+  }
+
+  .van-cell__value {
+    flex: unset;
+    width: 232px;
+    height: 146px;
+    padding-left: 25px;
+  }
+
+  .right-cover {
+    width: 232px;
+    height: 146px;
+  }
+
+
+
+  .label-info-wrap span {
+    font-size: 22px;
+    color: #b4b4b4;
+    margin-right: 25px;
+  }
+
+  .cover-wrap{
+    display: flex;
+    padding: 30px 0;
+   
+
+  .cover-item-img {
+    flex: 1;
+    height: 146px;
+    overflow: hidden;
+      .van-image{
+        height: 100%;
+      }
+  }
+}
+}
+
+//------------------------------------------------------------
+.article-container {
+  .main-wrap {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 92px;
+    bottom: 88px;
+    overflow-y: scroll;
+    background-color: #fff;
+  }
+  .article-detail {
+    .article-title {
+      font-size: 40px;
+      padding: 50px 32px;
+      margin: 0;
+      color: #3a3a3a;
+    }
+
+    .user-info {
+      padding: 0 32px;
+      .avatar {
+        width: 70px;
+        height: 70px;
+        margin-right: 17px;
+      }
+      .van-cell__label {
+        margin-top: 0;
+      }
+      .user-name {
+        font-size: 24px;
+        color: #3a3a3a;
+      }
+      .publish-date {
+        font-size: 23px;
+        color: #b7b7b7;
+      }
+      .follow-btn {
+        width: 170px;
+        height: 58px;
+      }
+    }
+
+    .article-content {
+      padding: 55px 32px;
+      /deep/ p {
+        text-align: justify;
+      }
+    }
+  }
+
+  .loading-wrap {
+    padding: 200px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+  }
+
+  .error-wrap {
+    padding: 200px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    .van-icon {
+      font-size: 122px;
+      color: #b4b4b4;
+    }
+    .text {
+      font-size: 30px;
+      color: #666666;
+      margin: 33px 0 46px;
+    }
+    .retry-btn {
+      width: 280px;
+      height: 70px;
+      line-height: 70px;
+      border: 1px solid #c3c3c3;
+      font-size: 30px;
+      color: #666666;
+    }
+  }
+
+  .article-bottom {
+
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-sizing: border-box;
+    height: 88px;
+    border-top: 1px solid #d8d8d8;
+    background-color: #fff;
+    .comment-btn {
+      width: 282px;
+      height: 46px;
+      border: 2px solid #eeeeee;
+      font-size: 30px;
+      line-height: 46px;
+      color: #a7a7a7;
+    }
+    .van-icon {
+      font-size: 40px;
+      .van-info {
+        font-size: 16px;
+        background-color: #e22829;
+      }
+    }
+  }
 }
