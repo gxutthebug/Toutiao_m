@@ -13,5 +13,8 @@ module.exports = {
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'
+  },
+  "globals":{
+    "ImagePreview": true // 防止误认为引入的全局变量ImagePreview未定义
   }
 }

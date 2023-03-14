@@ -63,8 +63,15 @@ export default {
   },
   computed: {},
   watch: {},
-  created () {},
-  mounted () {},
+  created () {
+    console.log('这是列表项的create')
+  },
+  beforeMount () {
+    console.log('这是列表项的beforeMount')
+  },
+  mounted () {
+    console.log('这是列表项的mounted')
+  },
   methods: {}
 }
 </script>

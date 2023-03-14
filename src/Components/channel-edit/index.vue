@@ -78,6 +78,7 @@ export default {
   },
   watch: {},
   async created () {
+    console.log('这是编辑组件的create')
     const { data } = await getAllChannel()
     this.allchannel = data.data.channels
     console.log('所有频道')
@@ -89,7 +90,12 @@ export default {
     // created中计算属性已经被挂载完毕只要，说明上述情况是用户关注的频道数未获取到， 总的频道数 - 0 = 总的频道数
     // 总频道数的获取和打印在父级的生命周期，说明子组件的created有时候会比父级先执行？
   },
-  mounted () {},
+  beforeMount () {
+    console.log('这是编辑组件的beformount')
+  },
+  mounted () {
+    console.log('这是编辑组件的mounted')
+  },
   methods: {
     async add (channel) {
       if (this.isEdit) {

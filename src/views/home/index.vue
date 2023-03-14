@@ -21,7 +21,7 @@
      <!-- 这是横向滑动条和每个滑动块对应的内容部分 -->
      <!-- 虽然是这样写但是内容区只有在对应滑块 首次 高亮时才会渲染,一次渲染后数据会被保留，再次选中不用重新开始加载-->
     <van-tab v-for="obj in channels" :key="obj.id"  :title="obj.name" >
-      <articleList :channels="obj" ref="aa" id="测试用的"></articleList>
+      <articleList :channels="obj" ref="aa" id="测试用的" ></articleList>
     </van-tab>
 
     <template  #nav-right>
@@ -70,6 +70,7 @@ export default {
   computed: {},
   watch: {},
   async created () {
+    console.log('这是首页的create')
     if (this.$store.state.user) {
       const { data } = await getChannels()
       this.channels = data.data.channels
@@ -88,19 +89,19 @@ export default {
         console.log('用户关注频道(非登录状态默认值)') // 这个是用户从来没有进行过非登录状态下的频道编辑，历史信息为空，后台给他些默认值
         console.log(this.channels)
       }
-      // 你把非登录状态理解为一个用户，这个用户的关注频道初始化有两种方式：
-      // 一种是用户以前进行过非登录状态下的频道编辑，直接拿他上一次的结构来赋值
-      // 另一种是从来没有进行过非登录状态下的频道编辑,后台返回默认关注列表给你
-      // 然后这个非登录用户，可以在初始关注列表的基础上编辑关注列表
     }
   },
+  beforeMount () {
+    console.log('这是首页的beformounted')
+  },
   mounted () {
+    console.log('这是首页的mounted')
     setTimeout(() => {
-      console.log('打印vc对象')
+      console.log('$refs打印vc对象')
       console.log(this)
       console.log(this.$refs.aa[0])
       // console.log(this.$refs.aa[0])
-    }, 5000)
+    }, 3000)
   },
   methods: {
     addfunction (channel) {

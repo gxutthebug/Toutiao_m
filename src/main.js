@@ -3,11 +3,11 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import '@/style/index.less'
-import { Button, NavBar, Form, Field, Toast, CountDown, Tabbar, TabbarItem, Image as VanImage, Grid, GridItem, Cell, CellGroup, Dialog, Tab, Tabs, Icon, List, PullRefresh, Popup, Search, Loading, Divider } from 'vant'
+import { Button, NavBar, Form, Field, Toast, CountDown, Tabbar, TabbarItem, Image as VanImage, Grid, GridItem, Cell, CellGroup, Dialog, Tab, Tabs, Icon, List, PullRefresh, Popup, Search, Loading, Divider, ImagePreview } from 'vant'
 import 'amfe-flexible'
 import '@/utils/day'
 // import { aa } from '@/utils/mixin'
-
+Vue.prototype.$preview = ImagePreview
 Vue.use(Button)
 Vue.use(NavBar)
 Vue.use(Form)
@@ -31,6 +31,7 @@ Vue.use(Popup)
 Vue.use(Search)
 Vue.use(Loading)
 Vue.use(Divider)
+// Vue.use(ImagePreview) // 不懂为啥注册不上
 Vue.config.productionTip = false
 
 // console.log('打印VUE')

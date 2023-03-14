@@ -51,22 +51,18 @@ export default {
   computed: {},
   watch: {},
   created () {
-    console.log('列表组件诞生了')
+    console.log('这是列表组件的creat')
+  },
+  beforeMount () {
+    console.log('这是列表组件的beformount')
   },
   mounted () {
-    // this.$nextTick(() => {
-    //   console.log('打印vc对象')
-    //   console.log(this)
-    //   console.log(this.$refs.test[1])
-    // })
+    console.log('这是列表组件的mounted')
   },
   destroyed () {
     console.log('列表组件被销毁了')
   },
   updata () {
-    // console.log('打印vc对象')
-    // console.log(this)
-    // console.log(this.$refs.test)
   },
   methods: {
     async onLoad () {
