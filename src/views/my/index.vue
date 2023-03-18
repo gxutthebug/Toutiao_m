@@ -14,7 +14,11 @@
             <span class="name">黑马头条</span>
           </div>
           <div class="right">
-            <van-button round type="success"  size="mini" class="fix-data">编辑资料</van-button>
+            <van-button round type="success" 
+             size="mini" class="fix-data"
+             @click="$router.push({name:'user-profile'})">
+             编辑资料
+            </van-button>
           </div>
         </div>
 

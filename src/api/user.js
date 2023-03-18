@@ -54,3 +54,21 @@ export const unCollect = (target) => {
     url: `/v1_0/article/collections/:${target}`
   })
 }
+
+
+export const getuserdata = () => {
+  return request({
+    method: 'GET',
+    url: '/v1_0/user/profile'
+  })
+}
+
+export const userphoto = data => {
+  return request({
+    method: 'PATCH',
+    url: '/v1_0/user/photo',
+    data
+  })
+}
+
+
